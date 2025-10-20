@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Academia - Treine seu Máximo Potencial</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/DNA logo.jpg" alt="DNA Fitness Logo" class="logo">
+            <h1>DNA Academia</h1>
+            
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#programas">Modalidades</a></li>
+                    <li><a href="#beneficios">Diferenciais</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="#contato" class="btn-cta-nav">Matricule-se</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <p class="slogan">Transforme seu corpo e sua mente</p>
+            <h2>COMECE HOJE. MUDANÇAS INCRÍVEIS TE ESPERAM.</h2>
+            <p>Mais de 5.000m² de equipamentos modernos e a melhor equipe de profissionais.</p>
+            <a href="#planos" class="btn-cta-principal">VER PLANOS E PREÇOS</a>
+        </div>
+    </section>
+    
+    <section id="planos" class="section-light">
+        <h2>ESCOLHA SEU MELHOR PLANO</h2>
+        <div class="planos-container">
+            <div class="plano-card">
+                <h3>PLANO START</h3>
+                <p class="preco">R$ 99,90<span>/mês</span></p>
+                <ul>
+                    <li>Acesso à Musculação</li>
+                    <li>Área de Cardio</li>
+                    <li class="excluido">Aulas em Grupo</li>
+                    <li class="excluido">Acesso a Outras Unidades</li>
+                </ul>
+                <a href="#contato" class="btn-plano">COMEÇAR</a>
+            </div>
+            
+            <div class="plano-card plano-destaque">
+                <span class="etiqueta-destaque">MAIS POPULAR</span>
+                <h3>PLANO DNA VIP</h3>
+                <p class="preco">R$ 149,90<span>/mês</span></p>
+                <ul>
+                    <li>Acesso Ilimitado</li>
+                    <li>Aulas em Grupo Inclusas</li>
+                    <li>Treinamento Personalizado</li>
+                    <li>Leve um Convidado (5x/mês)</li>
+                </ul>
+                <a href="#contato" class="btn-plano-destaque">ASSINAR AGORA</a>
+            </div>
+            
+            <div class="plano-card">
+                <h3>PLANO CLASSE</h3>
+                <p class="preco">R$ 119,90<span>/mês</span></p>
+                <ul>
+                    <li>Acesso à Musculação (Horário Reduzido)</li>
+                    <li>**Todas** as Aulas em Grupo</li>
+                    <li class="excluido">Treinamento Personalizado</li>
+                    <li class="excluido">Leve um Convidado</li>
+                </ul>
+                <a href="#contato" class="btn-plano">COMEÇAR</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="programas">
+        <h2>NOSSAS MODALIDADES</h2>
+        <p class="subtitulo">Treinos que se encaixam no seu objetivo.</p>
+        <div class="cards-programas">
+            <div class="card-programa">Musculação</div>
+            <div class="card-programa">Cardio</div>
+            <div class="card-programa">Boxe & Lutas</div>
+            <div class="card-programa">Yoga & Pilates</div>
+            </div>
+    </section>
+
+    <section id="beneficios" class="section-light">
+        <h2>O QUE SÓ A DNA ACADEMIA TEM</h2>
+        <div class="beneficios-container">
+             <div class="beneficio-item">
+                <h3>Treinamento Personalizado</h3>
+                <p>Equipe de profissionais de ponta para guiar seu treino com foco em resultados.</p>
+            </div>
+             <div class="beneficio-item">
+                <h3>Estrutura Premium</h3>
+                <p>Equipamentos novos, vestiários amplos e ambientes climatizados.</p>
+            </div>
+             <div class="beneficio-item">
+                <h3>Aulas Ilimitadas</h3>
+                <p>Aproveite nossa grade completa de aulas inclusas no Plano DNA VIP.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre-nos">
+        <div class="sobre-conteudo">
+             <h2>NOSSA MISSÃO</h2>
+             <p>Na DNA, acreditamos que fitness é mais do que levantar peso, é uma transformação de dentro para fora. Inspiramos e transformamos vidas, promovendo saúde, disciplina e bem-estar em um ambiente motivador e acolhedor.</p>
+             <a href="#contato" class="btn-cta-secundario">CONHEÇA NOSSA HISTÓRIA</a>
+        </div>
+    </section>
+    
+    <section id="localizacao">
+        <h2>VISITE A DNA ACADEMIA</h2>
+        <p class="subtitulo">Estamos te esperando para um treino experimental!</p>
+        <button id="btn-ver-mapa" class="btn-cta-principal">VER LOCALIZAÇÃO NO MAPA</button>
+        <div id="mapa-container"></div>
+        <div id="contato" class="info-contato">
+            <p>Rua Exemplo de Sucesso, 404 - Bairro Fit - Cidade/RJ</p>
+            <p>Telefone: **(21) 98765-4321** | Email: **contato@dnaacademia.com.br**</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <p class="footer-links">
+            <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Fale Conosco</a>
+        </p>
+        <p>© 2025 DNA Academia. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
