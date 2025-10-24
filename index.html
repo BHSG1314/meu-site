@@ -30,7 +30,7 @@
         <div class="hero-content">
             <p class="slogan">Transforme seu corpo e sua mente</p>
             <h2>COMECE HOJE. MUDANÇAS INCRÍVEIS TE ESPERAM.</h2>
-            <p>Mais de 5.000m² de equipamentos modernos e a melhor equipe de profissionais.</p>
+            <p>equipamentos modernos e a melhor equipe de profissionais.</p>
             <a href="#planos" class="btn-cta-principal">VER PLANOS E PREÇOS</a>
         </div>
     </section>
@@ -119,11 +119,41 @@
         <p class="subtitulo">Estamos te esperando para um treino experimental!</p>
         <button id="btn-ver-mapa" class="btn-cta-principal">VER LOCALIZAÇÃO NO MAPA</button>
         <div id="mapa-container"></div>
+        
         <div id="contato" class="info-contato">
-            <p>Rua Exemplo de Sucesso, 404 - Bairro Fit - Cidade/RJ</p>
-            <p>Telefone: **(21) 98765-4321** | Email: **contato@dnaacademia.com.br**</p>
+            <h2 style="color: var(--cor-primaria);">MATRICULE-SE AGORA!</h2>
+            <p>Preencha o formulário e nossa equipe entrará em contato para finalizar sua matrícula e iniciar seu Plano!</p>
+            
+            <form id="form-matricula" class="form-style">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone (Whatsapp)</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="plano-interesse">Plano de Interesse</label>
+                    <select id="plano-interesse" name="plano-interesse" required>
+                        <option value="">Selecione um plano...</option>
+                        <option value="START">PLANO START (R$ 99,90/mês)</option>
+                        <option value="DNA VIP">PLANO DNA VIP (R$ 149,90/mês) - Mais Popular!</option>
+                        <option value="CLASSE">PLANO CLASSE (R$ 119,90/mês)</option>
+                        <option value="TREINO EXPERIMENTAL">Treino Experimental Gratuito</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-cta-principal">ENVIAR PEDIDO DE MATRÍCULA</button>
+            </form>
+
+            <p class="endereco-info">Av. José Bernardo de Barros, 501 - Cascalho, **Nova Lima - MG**</p>
+            <p class="contato-info">Telefone: **(31) 3694-5167** | Email: **contato@dnaacademia.com.br**</p>
         </div>
-    </section>
+        </section>
 
 
     <footer>
