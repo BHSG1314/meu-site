@@ -1,3 +1,32 @@
+// NOVO: Adiciona a lógica do menu mobile
+const menuToggle = document.getElementById("menu-toggle");
+const menuMobileList = document.getElementById("menu-mobile-list");
+const menuLinks = menuMobileList.querySelectorAll('a');
+
+function toggleMenu() {
+    menuMobileList.classList.toggle('is-open');
+    menuToggle.classList.toggle('is-active');
+    // Adiciona/remove 'no-scroll' no body para evitar scroll quando o menu está aberto
+    document.body.classList.toggle('no-scroll'); 
+}
+
+// Evento para o botão hambúrguer
+if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMenu);
+}
+
+// Evento para fechar o menu ao clicar em um link (navegação)
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Verifica se o menu está aberto (se as classes existem)
+        if (menuMobileList.classList.contains('is-open')) {
+            toggleMenu(); // Fecha o menu
+        }
+    });
+});
+// FIM NOVO
+
+
 const btnVerMapa = document.getElementById("btn-ver-mapa");
 const mapaContainer = document.getElementById("mapa-container");
 let mapaVisivel = false;
