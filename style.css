@@ -87,6 +87,37 @@ header h1 {
 .btn-cta-nav:hover {
     background-color: #FFE873; /* Amarelo mais claro no hover */
 }
+
+/* NOVO: Estilos do Botão Hamburguer (Inicialmente Escondido no Desktop) */
+.menu-toggle {
+    display: none; /* Esconder no desktop */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Garante que fique acima do menu */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--cor-primaria); /* Cor do hamburguer */
+    transition: all 0.3s ease-in-out;
+}
+
+/* NOVO: Estilos de Transição (Para animação de fechar/abrir) */
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Seção Principal (Hero) */
 #hero {
     background: url('caminho/para/imagem/fundo-academia.jpg') no-repeat center center/cover;
@@ -325,7 +356,7 @@ footer {
 }
 
 
-/* --- ESTILOS DO FORMULÁRIO DE MATRÍCULA (NOVO) --- */
+/* --- ESTILOS DO FORMULÁRIO DE MATRÍCULA --- */
 
 .info-contato {
     background-color: #1A1A1A; /* Fundo escuro levemente diferente */
@@ -394,15 +425,65 @@ footer {
 }
 
 
-/* Media Query para Responsividade */
+/* ---------------------------------------------------- */
+/* MEDIA QUERY (CORREÇÃO E IMPLEMENTAÇÃO MOBILE) */
+/* ---------------------------------------------------- */
+
 @media (max-width: 992px) {
 
     .header-container {
-        flex-direction: column;
+        flex-direction: row; /* Volta a ser linha para logo e hamburguer */
+        justify-content: space-between; /* Espaço entre logo/titulo e hamburguer */
     }
 
+    /* 1. Oculta o menu desktop e exibe o botão toggle */
     .menu-desktop {
-        margin-top: 15px;
+        display: none; 
+        /* Configuração do menu mobile: Oculto por padrão no mobile */
+        position: fixed;
+        top: 83px; /* Altura do header: 60px (logo) + padding + border (aprox. 83px) */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 83px); /* Altura total menos o cabeçalho */
+        background-color: #000; /* Fundo escuro total */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        z-index: 999;
+    }
+    
+    /* Estado ativo do menu mobile (aberto) */
+    .menu-desktop.is-open {
+        display: flex; /* Exibe como um flex container */
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Estilo da lista de links no mobile */
+    .menu-desktop ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-desktop ul li {
+        margin: 20px 0;
+    }
+    
+    .menu-desktop a {
+        font-size: 1.5em; /* Links maiores para toque */
+        padding: 10px 0;
+    }
+
+    .btn-cta-nav {
+        display: inline-block; /* Volta a ser inline-block para caber no li */
+        margin-top: 5px;
+    }
+
+    .menu-toggle {
+        display: block; /* Exibir o hamburguer no mobile */
     }
 
     .planos-container, .beneficios-container {
@@ -437,17 +518,6 @@ footer {
 
     .card-programa {
         flex: 1 1 45%;
-    }
-
-    .menu-desktop ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .btn-cta-nav {
-        display: block;
-        margin-top: 10px;
     }
 
 }
