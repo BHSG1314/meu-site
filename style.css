@@ -120,6 +120,7 @@ header h1 {
 
 /* Seção Principal (Hero) */
 #hero {
+    /* Mantenha o caminho para sua imagem de fundo */
     background: url('caminho/para/imagem/fundo-academia.jpg') no-repeat center center/cover;
     height: 80vh; /* Altura da tela */
     display: flex;
@@ -284,11 +285,85 @@ header h1 {
     transition: background-color 0.3s;
     min-width: 150px;
     flex: 1 1 200px; /* Garante que os cards tenham um tamanho mínimo e se ajustem */
+    cursor: pointer; /* Adiciona cursor para indicar clique */
 }
 .card-programa:hover {
     background-color: var(--cor-primaria); /* Destaque Amarelo no hover */
     color: #000;
 }
+/* Estilo para o card-programa ativo */
+.card-programa.ativo {
+    background-color: var(--cor-primaria); /* Destaque Amarelo */
+    color: #000;
+}
+
+/* NOVO: Estilos para a nova parte de detalhes da modalidade */
+#detalhe-modalidade-container {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 20px;
+    background-color: #0A0A0A; /* Fundo escuro */
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.detalhe-modalidade {
+    display: none; /* Inicialmente oculto */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.detalhe-modalidade.ativo {
+    display: block;
+}
+
+.detalhe-modalidade h3 {
+    color: var(--cor-primaria);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.detalhe-conteudo {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.detalhe-texto {
+    flex: 1;
+}
+
+.detalhe-texto p {
+    color: #CCC;
+    line-height: 1.8;
+}
+
+.detalhe-texto ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: #FFF;
+}
+
+.detalhe-texto li {
+    margin-bottom: 8px;
+}
+
+.detalhe-foto {
+    flex: 1;
+    max-width: 400px;
+    height: 250px; /* Altura fixa para o container da imagem */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-modalidade {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o container */
+}
+/* FIM NOVO: Estilos para a nova parte de detalhes da modalidade */
+
 /* Seção de Diferenciais (Benefícios) */
 .beneficios-container {
     display: flex;
@@ -509,6 +584,19 @@ footer {
         font-size: 2.5em;
     }
 
+}
+@media (max-width: 768px) {
+    /* NOVO: Ajuste do detalhe para mobile: foto em cima, texto em baixo */
+    .detalhe-conteudo {
+        flex-direction: column; /* Colunas em telas menores */
+    }
+
+    .detalhe-foto {
+        width: 100%;
+        max-width: none;
+        height: 200px; /* Altura menor no mobile */
+        /* REMOVEMOS: order: -1; para manter a foto em primeiro lugar na ordem do HTML */
+    }
 }
 @media (max-width: 600px) {
 
